@@ -11,34 +11,34 @@ There are two stages I used scripts:
 
 ## Background
 
-While on a vacation watching whales, I received a notification from the Munich **Kreisverwaltungsreferat (KVR)** that my citizenship certificate was ready for pickup. The only available appointment slot was too far away, and I already had things planned in the pipeline. I booked that date as a fallback, but started thinking about ways to get an earlier one.
+While on a vacation watching whales in the beautiful Vancouver region 🐳, I received a notification from the Munich **Kreisverwaltungsreferat (KVR)** that my citizenship certificate was ready for pickup. The only available appointment slot was too far away, and I already had things planned in the pipeline. I booked a later date as fallback, but instantly started thinking about ways to get an earlier one.
 
-So I asked Claude to write a script for me — after working through the request/response structures of the APIs being called.
+After understanding the request/response structures of the APIs being called, I asked Claude to write a script to automate this for me.
 
 ## Why
 
-- I was definitely not going to refresh the booking portal now and then, waiting for a sooner slot to pop up.
-- I still wanted to book the appointment myself — I'm not quite comfortable with AI making decisions on my behalf — but I wanted to be **notified by email the moment an earlier slot opened up**.
+- I was NOT going to refresh the booking portal now and then, waiting for a sooner slot to pop up.
+- I still wanted to book the appointment myself — I'm not quite comfortable with AI making decisions on my behalf (yet!) — but I wanted to be **notified by email the moment an earlier slot opened up**.
 
 ## How it ran
 
-- A lightweight polling script, running on a remote server.
+- A lightweight polling script, running on a remote server. 🖥️
 - Big thanks to my better half and her remote server. 🙏
 
 ## What's in here
 
-| File                                   | Description                                                           |
-| -------------------------------------- | --------------------------------------------------------------------- |
-| `urkunde/check-termin.py`              | Script checking earlier appointment slots for certificate pickup      |
-| `ausweis-pass/passport_monitor.py`     | Core polling script that checks for earlier passportappointment slots |
-| `ausweis-pass/run_passport_monitor.sh` | Shell wrapper to run the passportmonitor                              |
+| File                                   | Description                                                            |
+| -------------------------------------- | ---------------------------------------------------------------------- |
+| `urkunde/check-termin.py`              | Script checking earlier appointment slots for certificate pickup       |
+| `ausweis-pass/passport_monitor.py`     | Core polling script that checks for earlier passport appointment slots |
+| `ausweis-pass/run_passport_monitor.sh` | Shell wrapper to run the passportmonitor                               |
 
-## Steps to run the ausweis-pass
-
-1. Fill in necessary details in passport_monitor
-2. Navigate into ausweis-pass directory
-3. Run shell script `sh run_passport_monitor.sh`
-
-## Steps to run the ausweis-pass
+## Steps to check earlier appointment dates for certificate pickup
 
 1. Just run the python script (see usage in the script)
+
+## Steps to check whether the ausweis & passport are ready for pickup
+
+1. Fill in necessary details in passport_monitor.
+2. Navigate into ausweis-pass directory.
+3. Run shell script `sh run_passport_monitor.sh`
